@@ -10,6 +10,8 @@ import GlassRenderer from "./GlassRenderer";
 const GlassMagnifier = props => {
   const {
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     largeImageSrc,
     imageAlt,
     magnifierBorderSize,
@@ -52,6 +54,8 @@ const GlassMagnifier = props => {
         magnifierBackgroundColor={magnifierBackgroundColor}
         magnifierSize={magnifierSize}
         imageSrc={imageSrc}
+        imageSrcSet={imageSrcSet}
+        imageSizes={imageSizes}
         largeImageSrc={largeImageSrc}
         imageAlt={imageAlt}
         square={square}
@@ -68,6 +72,14 @@ const GlassMagnifier = props => {
 
 GlassMagnifier.propTypes = {
   imageSrc: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  imageSrcSet: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  imageSizes: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
   ]),
@@ -94,6 +106,7 @@ GlassMagnifier.propTypes = {
 
 GlassMagnifier.defaultProps = {
   imageSrc: "",
+  imageSrcSet: "",
   largeImageSrc: "",
   imageAlt: "",
   allowOverflow: false,

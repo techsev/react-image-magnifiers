@@ -11,6 +11,8 @@ import { MagnifierContext } from "./MagnifierContainer";
 function MagnifierPreview(props) {
   const {
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     imageAlt,
     largeImageSrc,
     className,
@@ -58,6 +60,8 @@ function MagnifierPreview(props) {
     >
       <MagnifierPreviewRenderer
         image={imageSrc}
+        imageSrcSet={imageSrcSet}
+        imageSizes={imageSizes}
         largeImage={largeImageSrc}
         alt={imageAlt}
         zoomImageDimensions={zoomImageDimensions}
@@ -88,6 +92,14 @@ MagnifierPreview.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
   ]),
+  imageSrcSet: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  imageSizes: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
   largeImageSrc: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
@@ -110,6 +122,8 @@ MagnifierPreview.propTypes = {
 MagnifierPreview.defaultProps = {
   cursorStyle: "crosshair",
   imageSrc: "",
+  imageSrcSet: "",
+  imageSrcSizes: "",
   imageAlt: "",
   overlayOpacity: 0.5,
   overlayBoxOpacity: 0.8,

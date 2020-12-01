@@ -12,6 +12,8 @@ const SideBySideRenderer = props => {
     elementOffset,
     itemDimensions,
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     largeImageSrc,
     imageAlt,
     itemRef,
@@ -202,6 +204,8 @@ const SideBySideRenderer = props => {
           display: "block",
           cursor: legalSize ? cursorStyle : "default"
         }}
+        srcSet={imageSrcSet}
+        sizes={imageSizes}
         src={imageSrc}
         alt={imageAlt}
         onImageLoad={onImageLoad}

@@ -10,6 +10,8 @@ import MagnifierRenderer from "./MagnifierRenderer";
 const Magnifier = props => {
   const {
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     largeImageSrc,
     imageAlt,
     cursorStyle,
@@ -48,6 +50,8 @@ const Magnifier = props => {
     >
       <MagnifierRenderer
         imageSrc={imageSrc}
+        imageSrcSet={imageSrcSet}
+        imageSizes={imageSizes}
         largeImageSrc={largeImageSrc}
         imageAlt={imageAlt}
         renderOverlay={renderOverlay}
@@ -64,6 +68,14 @@ const Magnifier = props => {
 
 Magnifier.propTypes = {
   imageSrc: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  imageSrcSet: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  imageSizes: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
   ]),
@@ -93,6 +105,8 @@ Magnifier.propTypes = {
 
 Magnifier.defaultProps = {
   imageSrc: "",
+  imageSrcSet: "",
+  imageSizes: "",
   largeImageSrc: "",
   imageAlt: "",
   cursorStyle: "zoom-in",

@@ -8,6 +8,8 @@ import Image from "./Image";
 function MagnifierZoom(props) {
   const {
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     imageAlt,
     className,
     style,
@@ -51,6 +53,8 @@ function MagnifierZoom(props) {
             true
           )
         }}
+        srcSet={imageSrcSet}
+        sizes={imageSizes}
         src={imageSrc}
         alt={imageAlt}
         onImageLoad={e => {

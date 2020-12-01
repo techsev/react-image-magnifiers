@@ -6,6 +6,8 @@ import styles from "./styles";
 function MagnifierPreviewRenderer(props) {
   const {
     image,
+    imageSrcSet,
+    imageSizes,
     largeImage,
     alt,
     previewSize,
@@ -35,7 +37,10 @@ function MagnifierPreviewRenderer(props) {
     <div style={{ position: "relative" }}>
       <Image
         style={{ display: "block", width: "100%" }}
+        srcSet={imageSrcSet}
+        sizes={imageSizes}
         src={image}
+
         alt={alt}
         onImageLoad={onImageLoad}
       />

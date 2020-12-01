@@ -12,6 +12,8 @@ const GlassRenderer = props => {
     itemDimensions,
     active,
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     largeImageSrc,
     imageAlt,
     magnifierBorderSize,
@@ -59,6 +61,8 @@ const GlassRenderer = props => {
           boxSizing: "border-box",
           cursor: legalSize ? cursorStyle : "default"
         }}
+        srcSet={imageSrcSet}
+        sizes={imageSizes}
         src={imageSrc}
         alt={imageAlt}
         onImageLoad={onImageLoad}

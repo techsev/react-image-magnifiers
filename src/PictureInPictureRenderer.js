@@ -11,6 +11,8 @@ const PictureInPictureRenderer = props => {
     elementDimensions,
     itemDimensions,
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     largeImageSrc,
     imageAlt,
     itemRef,
@@ -146,6 +148,8 @@ const PictureInPictureRenderer = props => {
           opacity: previewOpacity,
           visibility: legalSize ? "visible" : "hidden"
         }}
+        srcSet={imageSrcSet}
+        sizes={imageSizes}
         src={imageSrc}
         alt={imageAlt}
         onImageLoad={e => {

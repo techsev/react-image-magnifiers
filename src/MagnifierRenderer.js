@@ -9,6 +9,8 @@ const MagnifierRenderer = props => {
     elementDimensions,
     itemDimensions,
     imageSrc,
+    imageSrcSet,
+    imageSizes,
     largeImageSrc,
     imageAlt,
     itemRef,
@@ -36,6 +38,8 @@ const MagnifierRenderer = props => {
           visibility: isActive ? "hidden" : "visible",
           width: "100%"
         }}
+        srcSet={imageSrcSet}
+        sizes={imageSizes}
         src={imageSrc}
         alt={imageAlt}
         onImageLoad={onImageLoad}
